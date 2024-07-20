@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Wallet</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .balance, .deposit, .withdraw {
+            background-color: #f0f0f0;
+            background-image: url('background2.jpeg');
+            padding: 10px;
+            margin-bottom: 00px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .balance div, .deposit div, .withdraw div {
+            margin-bottom: 10px;
+        }
+        .deposit input, .withdraw input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .deposit button  {
+            width: 100%;
+            padding: 10px;
+            background-color: #2e52f1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .withdraw button  {
+            width: 100%;
+            padding: 10px;
+            background-color: #f12e2e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }  
+    </style>
+</head>
+<body>
+<div class="profile">
+    <img src="profile.jpeg" alt="Profile Picture">
+    <h2 id="profile-name">Platinum Investors</h2>
+</div>
+
+<div class="balance">
+    <div><h4>Deposit Balance:</h4> <span id="deposit-balance">0</span> <h5>USD</h5></div>
+    <div><h4>Wallet Balance:</h4> <span id="wallet-balance">0</span> <h5>USD</h5></div>
+</div>
+
+<div class="deposit">
+    <h3>Make a Deposit</h3>
+    <div>
+        <input type="number" id="deposit-amount" placeholder="Amount to deposit">
+    </div>
+    <div>
+        <button onclick="makeDeposit()">Deposit</button>
+    </div>
+
+<div class="withdraw">
+    <h3>Make a Withdrawal</h3>
+    <div>
+        <input type="number" id="withdraw-amount" placeholder="Amount to withdraw">
+    </div>
+    <div>
+        <button onclick="makeWithdraw()">Withdraw</button>
+    </div>
+</div>
+
+<script>
+    let depositBalance = 0;
+    let walletBalance = 0;
+
+    function makeDeposit() {
+        let amount = parseFloat(document.getElementById('deposit-amount').value);
+        if (!isNaN(amount) && amount > 0) {
+            depositBalance += amount;
+            document.getElementById('deposit-balance').textContent = depositBalance.toFixed(2);
+            document.getElementById('deposit-amount').value = '';
+        } else {
+            alert('Please enter a valid amount');
+        }
+    }
+
+    function makeWithdraw() {
+        let amount = parseFloat(document.getElementById('withdraw-amount').value);
+        if (!isNaN(amount) && amount > 0) {
+            if (depositBalance >= amount) {
+                depositBalance -= amount;
+                walletBalance += amount;
+                document.getElementById('deposit-balance').textContent = depositBalance.toFixed(2);
+                document.getElementById('wallet-balance').textContent = walletBalance.toFixed(2);
+                document.getElementById('withdraw-amount').value = '';
+            } else {
+                alert('Insufficient deposit balance');
+            }
+        } else {
+            alert('Please enter a valid amount');
+        }
+    }
+</script>
+    
+
+</body>
+</html>

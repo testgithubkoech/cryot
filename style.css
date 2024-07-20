@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpeg');
+    margin: auto;
+    padding: 0;
+    
+}
+
+
+.container {
+    max-width: 800px;
+    max-height: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-image: url('background2.jpeg');
+    border: 1px solid #2dee5d;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(71, 223, 83, 0.1);
+
+}
+
+.pass-container {
+    max-width: 400px;
+    max-height: 600px;
+    margin: 50px auto;
+    padding: right;
+    
+}
+.login-container {
+    max-width: 400px;
+    max-height: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-image: url('background2.jpeg');
+    border: 1px solid #2dee5d;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(71, 223, 83, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    background-color: lightblue;
+    font-size: 16px;
+    border: 1px solid #495155;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b517d4;
+    color: #3eee6a;
+    cursor: pointer;
+}
+.login-message a {
+    color: #2936f1;
+    text-decoration: none;
+}
+.signup-message a {
+    color: #9af129;
+    text-decoration: none;
+}
+.signup-container button:hover {
+    background-color: #31e93b;
+}
+
+button:hover {
+    background-color: #2a26f1;
+}
+h2 {
+    color: rgb(0, 255, 55);
+}
+
+h5 {
+    color: rgb(0, 255, 55);
+}
+h3 {
+    color: rgb(217, 255, 0);
+}
+h4 {
+    color: rgb(8, 12, 209);
+}
+
+p {
+    color: #0feb51;
+}
+p2 {
+    color: #eb0f0f;
+}
+
+#api-keys {
+    margin-top: 20px;
+}
+
+#api-keys p {
+    word-break: break-all;
+}
